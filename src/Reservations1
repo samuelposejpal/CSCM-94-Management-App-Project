@@ -1,0 +1,86 @@
+public class ReservationManager {
+	List<Reservation> reservations;
+	List<Table> tables;
+	Set<Customer> customers;
+	private static ReservationManager instance;
+	
+	private ReservationManager(){
+		customers = new HashSet<>();
+		init();
+	}
+	
+	public ReservationManager getInstance(){
+		if(instance == null){
+			instance = new ReservationManager();
+		}
+		return instance;
+	}
+	
+	private void init(){
+		reservations = new ArrayList<>();
+		tables = new ArrayList<>();
+	}
+
+	public boolean makeReservation(int customerId, LocalDate reservationTime ){
+		Table table = null;
+		for(Table t : tables){
+			if(t.isAvailable(reservationTime)){
+				table = t;
+				break;
+			}
+		}
+		if(table != null){
+			Reservation rsv = new Reservation(customerId, table.tableId, reservationTime);
+			return true;
+		}
+		return false;	
+	}
+
+	
+	private class Table{
+		int tableId;
+		int numberOfSeats;
+		TableType type;
+		
+		public Table(int id, int number, TableType type){
+			this.tableId = id;
+			this.numberOfSeats = number;
+			this.type = type;
+		}
+		
+		public boolean isAvailable(LocalDate reservationTime){
+			// check if this table is available begin from reserve time, the default duration is 1 hour.
+			return true;
+		}
+		
+	}
+	
+	enum TableType{
+		2,4,6
+	}
+}
+
+class Reservation{
+	int reservationId;
+	int customerId;
+	int tableId;
+	LocalDate creationTime;
+	LocalDate reservationTime;
+	String otherRequirements;
+	
+	public Reservation(int customerId, int tableId, LocalDate reservationTime){
+		this.reservationId = reservationId;
+		this.tableId = tableId;
+		this.customerId = customerId;
+		this.reservationTime = reservationTime;
+	}
+	
+	public void udpateTable() {
+		// to change the table for customer
+	}
+	
+	public void updateTime(){
+		// update the reservation time
+	}
+	
+}
