@@ -1,0 +1,153 @@
+Example 22-3 Creating the Clear Menu Item with Accelerator
+
+MenuItem clear = new MenuItem("Clear");
+    clear.setAccelerator(KeyCombination.keyCombination("Ctrl+X"));
+    clear.setOnAction(new EventHandler<ActionEvent>() {
+        public void handle(ActionEvent t) {
+            vbox.setVisible(false);
+        }
+});
+
+Example 22-4 Creating the Exit Menu Item
+
+MenuItem exit = new MenuItem("Exit");
+exit.setOnAction(new EventHandler<ActionEvent>() {
+    public void handle(ActionEvent t) {
+        System.exit(0);
+    }
+});
+
+
+
+
+Example 22-5 Adding Menu Items
+
+menuFile.getItems().addAll(add, clear, new SeparatorMenuItem(), exit);
+
+Example 22-6 Applying the CheckMenuItem Class to Create Toggle Options
+
+// --- Creating four check menu items within the start method
+CheckMenuItem titleView = createMenuItem ("Title", name);                                                       
+CheckMenuItem binNameView = createMenuItem ("Binomial name", binName);        
+CheckMenuItem picView = createMenuItem ("Picture", pic);        
+CheckMenuItem descriptionView = createMenuItem ("Description", description);     
+menuView.getItems().addAll(titleView, binNameView, picView, descriptionView);
+
+...
+
+// The createMenuItem method
+private static CheckMenuItem createMenuItem (String title, final Node node){
+    CheckMenuItem cmi = new CheckMenuItem(title);
+    cmi.setSelected(true);
+    cmi.selectedProperty().addListener(new ChangeListener<Boolean>() {
+        public void changed(ObservableValue ov,
+        Boolean old_val, Boolean new_val) {
+            node.setVisible(new_val);
+        }
+    });
+    return cmi;
+}
+
+
+
+
+
+Example 22-7 Creating a Submenu with Radio Menu Items
+
+//Picture Effect menu
+Menu menuEffect = new Menu("Picture Effect");
+final ToggleGroup groupEffect = new ToggleGroup();
+for (Entry<String, Effect> effect : effects) {
+    RadioMenuItem itemEffect = new RadioMenuItem(effect.getKey());
+    itemEffect.setUserData(effect.getValue());
+    itemEffect.setToggleGroup(groupEffect);
+    menuEffect.getItems().add(itemEffect);
+}
+//No Effects menu
+final MenuItem noEffects = new MenuItem("No Effects");
+
+ noEffects.setOnAction(new EventHandler<ActionEvent>() {
+     public void handle(ActionEvent t) {
+         pic.setEffect(null);
+         groupEffect.getSelectedToggle().setSelected(false);
+     }
+});
+
+//Processing menu item selection
+groupEffect.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+    public void changed(ObservableValue<? extends Toggle> ov,
+        Toggle old_toggle, Toggle new_toggle) {
+            if (groupEffect.getSelectedToggle() != null) {
+                Effect effect = 
+                    (Effect) groupEffect.getSelectedToggle().getUserData();
+                pic.setEffect(effect);
+            }
+        }
+ });
+//Adding items to the Edit menu
+menuEdit.getItems().addAll(menuEffect, noEffects);
+
+
+
+
+Example 22-8 Disabling a Menu Item
+
+Menu menuEffect = new Menu("Picture Effect");
+final ToggleGroup groupEffect = new ToggleGroup();
+for (Entry<String, Effect> effect : effects) {
+     RadioMenuItem itemEffect = new RadioMenuItem(effect.getKey());
+     itemEffect.setUserData(effect.getValue());
+     itemEffect.setToggleGroup(groupEffect);
+     menuEffect.getItems().add(itemEffect);
+}
+final MenuItem noEffects = new MenuItem("No Effects");
+noEffects.setDisable(true);      
+noEffects.setOnAction(new EventHandler<ActionEvent>() {
+    public void handle(ActionEvent t) {
+        pic.setEffect(null);
+        groupEffect.getSelectedToggle().setSelected(false);
+        noEffects.setDisable(true);
+    }
+});
+
+groupEffect.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+    public void changed(ObservableValue<? extends Toggle> ov,
+        Toggle old_toggle, Toggle new_toggle) {
+            if (groupEffect.getSelectedToggle() != null) {
+                Effect effect = 
+                    (Effect) groupEffect.getSelectedToggle().getUserData();
+                pic.setEffect(effect);
+                noEffects.setDisable(false);
+            } else {
+                noEffects.setDisable(true);
+        }
+    }
+});
+menuEdit.getItems().addAll(menuEffect, noEffects);
+
+
+
+
+
+
+Example 22-9 Defining a Context Menu
+
+final ContextMenu cm = new ContextMenu();
+MenuItem cmItem1 = new MenuItem("Copy Image");
+cmItem1.setOnAction(new EventHandler<ActionEvent>() {
+    public void handle(ActionEvent e) {
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        ClipboardContent content = new ClipboardContent();
+        content.putImage(pic.getImage());
+        clipboard.setContent(content);
+    }
+});
+
+cm.getItems().add(cmItem1);
+pic.addEventHandler(MouseEvent.MOUSE_CLICKED,
+    new EventHandler<MouseEvent>() {
+        @Override public void handle(MouseEvent e) {
+            if (e.getButton() == MouseButton.SECONDARY)  
+                cm.show(pic, e.getScreenX(), e.getScreenY());
+        }
+});
