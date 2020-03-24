@@ -22,7 +22,7 @@ public abstract class Booking {
      * @param date the point in time for which the booking was made;
      *  must not be null and must not be in the past
      */
-    public Booking(String name, Date date) {
+    public Booking(String name, Date date, enum bookingType) {
         if (name == null) {
             throw new IllegalArgumentException("name must not be null!");
         }
@@ -34,8 +34,15 @@ public abstract class Booking {
         }
         this.name = name;
         this.date = date;
+        this.bookingType=bookingType;
     }
-
+    public enum bookingType {
+    STRING_ONE("reservations"),
+    STRING_TWO("Take out")
+    STRING_THREE("Delivery")
+    ;
+        Eatin, 
+        
     /**
      * Returns the number of persons for whom the booking has been made.
      * Concrete subclasses will need to provide a suitable implementation.
