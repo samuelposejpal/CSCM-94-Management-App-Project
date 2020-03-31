@@ -12,7 +12,7 @@ public class DeliveryProgram {
 
         //User sees Food Menu Items based on the selected Restaurant Id.
         MealMenuIteratorDriver mealMenuIteratorDriver = new MealMenuIteratorDriver();
-        ArrayList<FoodMenuModel> foodMenu = mealMenuIteratorDriver.PrintMealMenu(restaurantId);
+        ArrayList<FoodMenuModel> foodMenu = mealMenuIteratorDriver.PrintMealMenu(restaurant);
 
         //Meal Selector. / User Selects Meal
         MealSelectorDriver mealSelectorDriver = new MealSelectorDriver();
