@@ -2,9 +2,7 @@ package Ordering;
 import FoodDeliveryAppModel.FoodMenuModel;
 
 import java.util.*;
-/**
- * Created by Ishan on 1/21/2017.
- */
+
 public class Meal {
     private ArrayList<FoodMenuModel> foodItems = new ArrayList();
    // private List<FoodMenuModel> foodItems = new List<FoodMenuModel>();
