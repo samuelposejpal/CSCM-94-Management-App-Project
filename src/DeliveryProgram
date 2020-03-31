@@ -1,0 +1,36 @@
+  
+import FoodDeliveryAppModel.FoodMenuModel;
+import FoodDeliveryAppModel.UserModel;
+import FoodDeliveryDriver.*;
+
+import java.util.ArrayList;
+
+public class DeliveryProgram {
+
+    public static void main(String[] args) {
+
+
+        //User sees Food Menu Items based on the selected Restaurant Id.
+        MealMenuIteratorDriver mealMenuIteratorDriver = new MealMenuIteratorDriver();
+        ArrayList<FoodMenuModel> foodMenu = mealMenuIteratorDriver.PrintMealMenu(restaurantId);
+
+        //Meal Selector. / User Selects Meal
+        MealSelectorDriver mealSelectorDriver = new MealSelectorDriver();
+        ArrayList<FoodMenuModel> selectedMealItems = mealSelectorDriver.MealSelectionByUser(foodMenu);
+
+        //Calling Meal Builder/ Restaurant Builds meal
+        MealBuilderDriver mealBuilderDriver = new MealBuilderDriver();
+        double totalCost = mealBuilderDriver.BuildMealForUser(selectedMealItems);
+
+        //User Orders Food
+        String orderId = "";
+        UserModel user = null;
+        MealOrderDriver mealOrderDriver = new MealOrderDriver();
+        String cancel = mealOrderDriver.MealOrderByUser(selectedMealItems, totalCost, orderId,  user);
+
+        //Order Tracking.
+        OrderTrackingDriver orderTrackingDriver = new OrderTrackingDriver();
+        orderTrackingDriver.OrderTrackingByUser(orderId, user, cancel);
+
+    }
+}
