@@ -1,5 +1,3 @@
-package sample;
-
 public abstract class Booking {
 
     public int userID;
