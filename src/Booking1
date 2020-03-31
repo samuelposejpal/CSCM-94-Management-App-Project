@@ -5,7 +5,7 @@ import java.util.Date;
  * a date (the point in time for which the booking was made), and a number
  * of persons.
  *
- * @author Carsten Fuhs
+
  */
 public abstract class Booking {
 
