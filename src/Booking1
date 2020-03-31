@@ -40,9 +40,7 @@ public abstract class Booking {
     STRING_ONE("reservations"),
     STRING_TWO("Take out")
     STRING_THREE("Delivery")
-    ;
-        Eatin, 
-        
+    ;   
     /**
      * Returns the number of persons for whom the booking has been made.
      * Concrete subclasses will need to provide a suitable implementation.
@@ -51,7 +49,7 @@ public abstract class Booking {
      *  greater than or equal to zero
      */
     public abstract int getNumberOfPersons();
-
+        return this.NumberOfPersons;
     /**
      * @return the name of the booking, non-null
      */
