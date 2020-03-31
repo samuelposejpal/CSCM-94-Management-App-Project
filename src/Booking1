@@ -1,13 +1,11 @@
 package sample;
 
 public abstract class Booking {
-    /**
-     * Instance variables for a user.
-     */
+
     public int userID;
     public String firstName;
     public String lastName;
-private Date date; 
+    private Date date; 
 
     public Booking(int userID, Date date ) {
 this.userID = userID;
@@ -15,10 +13,7 @@ this.date = date;
 }
 
     // The methods:
-    /**
-     * These methods return the instance variables of a user.
-     * @return the user userID.
-     */
+
     public int get_BookingID() { return BookingID; }
 
     public String get_date() { return date; }
