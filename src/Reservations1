@@ -21,26 +21,17 @@ public class ReservationManager {
 		tables = new ArrayList<>();
 	}
 
-	public boolean makeReservation(int customerId, LocalDate reservationTime ){
+	public boolean makeReservation(int customerId, int tableId, LocalDate reservationTime, int numberOfCustomers, ){
 		Table table = null;
-		for(Table t : tables){
-			if(t.isAvailable(reservationTime)){
-				table = t;
-				break;
-			}
-		}
-		if(table != null){
-			Reservation rsv = new Reservation(customerId, table.tableId, reservationTime);
-			return true;
-		}
-		return false;	
+
+		Reservation rsv = new Reservation(customerId, table.tableId, reservationTime, numberOfCustomers);
+		return true;
+	
 	}
 
 	
 	private class Table{
 		int tableId;
-		int numberOfSeats;
-		TableType type;
 		
 		public Table(int id, int number, TableType type){
 			this.tableId = id;
@@ -49,15 +40,12 @@ public class ReservationManager {
 		}
 		
 		public boolean isAvailable(LocalDate reservationTime){
-			// check if this table is available begin from reserve time, the default duration is 1 hour.
 			return true;
 		}
 		
 	}
 	
-	enum TableType{
-		2,4,6
-	}
+
 }
 
 class Reservation{
@@ -66,21 +54,16 @@ class Reservation{
 	int tableId;
 	LocalDate creationTime;
 	LocalDate reservationTime;
-	String otherRequirements;
+	int numberOfCustomers
 	
-	public Reservation(int customerId, int tableId, LocalDate reservationTime){
+	public Reservation(int customerId, int tableId, LocalDate reservationTime, int numberOfCustomers){
 		this.reservationId = reservationId;
 		this.tableId = tableId;
 		this.customerId = customerId;
 		this.reservationTime = reservationTime;
+		this.numberOfCustomers = numberOfCustomers;
 	}
 	
-	public void udpateTable() {
-		// to change the table for customer
-	}
-	
-	public void updateTime(){
-		// update the reservation time
-	}
+
 	
 }
