@@ -1,74 +1,26 @@
-import java.util.Date;
+package sample;
 
-/**
- * Abstract superclass for our Booking hierarchy. A booking provides a name,
- * a date (the point in time for which the booking was made), and a number
- * of persons.
- *
-
- */
 public abstract class Booking {
-
-    /** The name for which the booking was made. Non-null. */
-    private String name;
-
-    /** The point in time for which the booking was made. Non-null. */
-    private Date date;
-
     /**
-     * Constructs a new Booking with a name and a date.
-     *
-     * @param name the name for which the booking was made; must not be null
-     * @param date the point in time for which the booking was made;
-     *  must not be null and must not be in the past
+     * Instance variables for a user.
      */
-    public Booking(String name, Date date, enum bookingType) {
-        if (name == null) {
-            throw new IllegalArgumentException("name must not be null!");
-        }
-        if (date == null) {
-            throw new IllegalArgumentException("date must not be null!");
-        }
-        if (date.before(new Date())) {
-            throw new IllegalArgumentException("date must not be in the past, found: " + date);
-        }
-        this.name = name;
-        this.date = date;
-        this.bookingType=bookingType;
-    }
-    public enum bookingType {
-    STRING_ONE("reservations"),
-    STRING_TWO("Take out")
-    STRING_THREE("Delivery")
-    ;   
-    /**
-     * Returns the number of persons for whom the booking has been made.
-     * Concrete subclasses will need to provide a suitable implementation.
-     *    
-     * @return the number of persons for which the booking has been made,
-     *  greater than or equal to zero
-     */
-    public abstract int getNumberOfPersons();
-        return this.NumberOfPersons;
-    /**
-     * @return the name of the booking, non-null
-     */
-    public String getName() {
-        return this.name;
-    }
+    public int userID;
+    public String firstName;
+    public String lastName;
+private Date date; 
 
-    /**
-     * @return the point in time for which the booking has been made, non-null
-     */
-    public Date getDate() {
-        return this.date;
-    }
-
-    @Override
-    public String toString() {
-        return "*** " + this.getClass().getName()
-                + " ***\nName: " + this.getName()
-                + "\nDate: " + this.getDate()
-                + "\nPersons: " + this.getNumberOfPersons();
-    }
+    public Booking(int userID, Date date ) {
+this.userID = userID;
+this.date = date;
 }
+
+    // The methods:
+    /**
+     * These methods return the instance variables of a user.
+     * @return the user userID.
+     */
+    public int get_BookingID() { return BookingID; }
+
+    public String get_date() { return date; }
+
+public String get_userID() { return  userID;}
