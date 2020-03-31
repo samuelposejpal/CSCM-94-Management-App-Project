@@ -5,7 +5,7 @@ public boolean makeReservation(int userId, LocalDate reservationTime, int number
 
 		Reservation Reservation = new Reservation(customerId, table.tableId, reservationTime, numberOfCustomers);
 		
-private class Table{
+public class Table{
 		int tableId;
 		
 		public Table(int id, int number, TableType type){
@@ -14,9 +14,7 @@ private class Table{
 			this.type = type;
 		}
 		
-		public boolean isAvailable(LocalDate reservationTime){
-			return true;
-		}
+
 class Reservation{
 	int reservationId;
 	int customerId;
@@ -41,6 +39,3 @@ class Reservation{
 
 	
 	}
-	Waiter.approveTableBooking(int orderID){
-		return true;
-		}
