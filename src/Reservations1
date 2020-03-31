@@ -1,69 +1,8 @@
-public class ReservationManager {
-	List<Reservation> reservations;
-	List<Table> tables;
-	Set<Customer> customers;
-	private static ReservationManager instance;
-	
-	private ReservationManager(){
-		customers = new HashSet<>();
-		init();
-	}
-	
-	public ReservationManager getInstance(){
-		if(instance == null){
-			instance = new ReservationManager();
-		}
-		return instance;
-	}
-	
-	private void init(){
-		reservations = new ArrayList<>();
-		tables = new ArrayList<>();
-	}
-
-	public boolean makeReservation(int customerId, int tableId, LocalDate reservationTime, int numberOfCustomers, ){
+public class Reservation extends Booking {
+public boolean makeReservation(int userId, LocalDate reservationTime, int numberOfCustomers, ){
 		Table table = null;
 
 		Reservation rsv = new Reservation(customerId, table.tableId, reservationTime, numberOfCustomers);
 		return true;
 	
 	}
-
-	
-	private class Table{
-		int tableId;
-		
-		public Table(int id, int number, TableType type){
-			this.tableId = id;
-			this.numberOfSeats = number;
-			this.type = type;
-		}
-		
-		public boolean isAvailable(LocalDate reservationTime){
-			return true;
-		}
-		
-	}
-	
-
-}
-
-class Reservation{
-	int reservationId;
-	int customerId;
-	int tableId;
-	LocalDate creationTime;
-	LocalDate reservationTime;
-	int numberOfCustomers
-	
-	public Reservation(int customerId, int tableId, LocalDate reservationTime, int numberOfCustomers){
-		this.reservationId = reservationId;
-		this.tableId = tableId;
-		this.customerId = customerId;
-		this.reservationTime = reservationTime;
-		this.numberOfCustomers = numberOfCustomers;
-	}
-	
-
-	
-}
