@@ -1,7 +1,5 @@
 public class Reservation extends Booking {
 
-	
-class Reservation{
 	int reservationId;
 	int customerId;
 	int tableId;
@@ -9,7 +7,7 @@ class Reservation{
 	LocalDate reservationTime;
 	int numberOfCustomers
 	
-public makeReservation(int userId, LocalDate reservationTime, int numberOfCustomers, ){
+	public makeReservation(int userId, LocalDate reservationTime, int numberOfCustomers, ){
 		Table table = null;
 		
 		this.reservationId = reservationId;
