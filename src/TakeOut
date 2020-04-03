@@ -4,9 +4,12 @@ public  class TakeOut extends Booking{
     private Date date; 
     public int TakeOutID;
 
-    public TakeOut(int userID, Date date ) {
+    public makeTakeOut(int userID, Date date ) {
     this.userID = userID;
     this.date = date;
+    TakeOut TakeOut= new TakeOut(userID, date);
+
+    
 }
 
     // The methods:
@@ -15,7 +18,8 @@ public  class TakeOut extends Booking{
 
     public String get_date() { return date; }
 
-public String get_userID() { return  userID;}
-//customers orders
-//chef prepares
-//waiter hands out
+    public String get_userID() { return  userID;}
+   
+   //customers orders
+    //chef prepares
+    //waiter hands out
