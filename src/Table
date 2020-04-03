@@ -1,0 +1,8 @@
+public class Table{
+		int tableId;
+		
+		public Table(int id, int number, TableType type){
+			this.tableId = id;
+			this.numberOfSeats = number;
+			this.type = type;
+		}
