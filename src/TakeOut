@@ -1,0 +1,21 @@
+public  class TakeOut extends Booking{
+
+    public int userID;
+    private Date date; 
+    public int TakeOutID;
+
+    public TakeOut(int userID, Date date ) {
+    this.userID = userID;
+    this.date = date;
+}
+
+    // The methods:
+
+    public int get_TakeOutID() { return TakeOutID; }
+
+    public String get_date() { return date; }
+
+public String get_userID() { return  userID;}
+//customers orders
+//chef prepares
+//waiter hands out
