@@ -1,10 +1,8 @@
 public class MenuItems {
-	private int price;
 	String item_name;
 	
 	MenuItems(int price,String item_name)
 	{
-		this.price = price;
 		this.item_name = item_name;
 		
 	}
