@@ -1,0 +1,18 @@
+public class Delivery extends Booking {
+
+    public int userID;
+    private Date date;
+    public int DeliveryID;
+
+    public Delivery(int userID, Date date ) {
+    this.userID = userID;
+    this.date = date;
+}
+
+    // The methods:
+
+    public int get_DeliveryID() { return DeliveryID; }
+
+    public String get_date() { return date; }
+
+public String get_userID() { return  userID;}
