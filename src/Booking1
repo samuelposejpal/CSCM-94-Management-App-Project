@@ -1,13 +1,12 @@
 public abstract class Booking {
 
     public int userID;
-    public String firstName;
-    public String lastName;
-    private Date date; 
+    private Date date;
+    public int BookingID;
 
     public Booking(int userID, Date date ) {
-this.userID = userID;
-this.date = date;
+    this.userID = userID;
+    this.date = date;
 }
 
     // The methods:
@@ -16,4 +15,4 @@ this.date = date;
 
     public String get_date() { return date; }
 
-public String get_userID() { return  userID;}
+    public String get_userID() { return  userID;}
