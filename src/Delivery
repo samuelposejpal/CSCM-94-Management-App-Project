@@ -4,9 +4,12 @@ public class Delivery extends Booking {
     private Date date;
     public int DeliveryID;
 
-    public Delivery(int userID, Date date ) {
+
+    public makeDelivery(int userID, Date date ) {
     this.userID = userID;
     this.date = date;
+    
+    Delivery Delivery = new Delivery(userID,date);
 }
 
     // The methods:
@@ -16,3 +19,4 @@ public class Delivery extends Booking {
     public String get_date() { return date; }
 
 public String get_userID() { return  userID;}
+}
