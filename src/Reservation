@@ -5,14 +5,6 @@ public boolean makeReservation(int userId, LocalDate reservationTime, int number
 
 		Reservation Reservation = new Reservation(customerId, table.tableId, reservationTime, numberOfCustomers);
 		
-public class Table{
-		int tableId;
-		
-		public Table(int id, int number, TableType type){
-			this.tableId = id;
-			this.numberOfSeats = number;
-			this.type = type;
-		}
 		
 
 class Reservation{
