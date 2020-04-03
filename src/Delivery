@@ -1,7 +1,7 @@
 public class Delivery extends Orders {
 
     public int userID;
-    private Date date;
+    public Datetime date;
     public int DeliveryID;
     public String array orderList;
 
