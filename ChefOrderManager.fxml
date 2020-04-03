@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="729.0" style="-fx-background-color: #DE6B53;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="176.79996337890626" minWidth="5.333350563049315" prefWidth="10.66668357849121" />
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="709.8666494369506" minWidth="10.0" prefWidth="704.5333164215087" />
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="151.80000000000007" minWidth="6.4666748046875" prefWidth="13.93328857421875" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="80.0" minHeight="65.0" prefHeight="72.59999084472656" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="410.4" minHeight="5.0" prefHeight="18.799999999999997" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="442.4000350952149" minHeight="10.0" prefHeight="390.0" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="387.1999816894531" minHeight="0.0" prefHeight="19.26665039062499" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="60.0" minHeight="5.20001220703125" prefHeight="55.20000610351565" vgrow="ALWAYS" />
+    </rowConstraints>
+    <children>
+        <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #E14F30;" GridPane.columnSpan="3">
+            <children>
+                <HBox alignment="CENTER" prefHeight="80.0" prefWidth="188.0">
+                    <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=" Café 94" wrappingWidth="202.9367332458496">
+                            <font>
+                                <Font name="Trebuchet MS" size="52.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="80.0" prefWidth="418.0" />
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" prefHeight="72.0" prefWidth="730.0" style="-fx-background-color: #E14F30;" GridPane.columnSpan="3" GridPane.rowIndex="4">
+         <children>
+            <ImageView fitHeight="59.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../back.png" />
+               </image>
+            </ImageView>
+                <HBox alignment="CENTER" prefHeight="59.0" prefWidth="121.0">
+                    <children>
+                        <ImageView fitHeight="63.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../home.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+         </children></HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+      <GridPane alignment="CENTER" prefHeight="362.0" prefWidth="693.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.2" minWidth="10.0" prefWidth="156.2" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.39999389648438" minWidth="0.0" prefWidth="18.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.2666778564453" minWidth="10.0" prefWidth="165.99995117187498" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.73335571289067" minWidth="9.466693115234364" prefWidth="18.00004882812499" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="389.0666809082031" minWidth="10.0" prefWidth="172.60000610351562" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="363.9333190917969" minWidth="1.1333496093750455" prefWidth="15.6666259765625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="363.9333190917969" minWidth="10.0" prefWidth="151.93337402343752" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="391.5999816894531" minHeight="10.0" prefHeight="348.9333251953125" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="349.33330688476565" minHeight="1.2000183105468523" prefHeight="43.86667480468748" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TitledPane animated="false" prefHeight="350.0" prefWidth="91.0" text="&quot;Tble No. Time&quot;">
+               <content>
+                  <ListView prefHeight="323.0" prefWidth="150.0" />
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" prefHeight="350.0" prefWidth="91.0" text="&quot;Tble No. Time&quot;" GridPane.columnIndex="2">
+               <content>
+                  <ListView prefHeight="289.0" prefWidth="115.0" />
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" prefHeight="350.0" prefWidth="91.0" text="&quot;Tble No. Time&quot;" GridPane.columnIndex="4">
+               <content>
+                  <ListView prefHeight="323.0" prefWidth="149.0" />
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" prefHeight="350.0" prefWidth="91.0" text="&quot;Tble No. Time&quot;" GridPane.columnIndex="6">
+               <content>
+                  <ListView prefHeight="289.0" prefWidth="115.0" />
+               </content>
+            </TitledPane>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="157.0" style="-fx-background-color: #80B8D1;" text="Completed" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="171.0" style="-fx-background-color: #80B8D1;" text="Completed" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="171.0" style="-fx-background-color: #80B8D1;" text="Completed" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="171.0" style="-fx-background-color: #80B8D1;" text="Completed" textFill="WHITE" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+    </children>
+</GridPane>
