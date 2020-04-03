@@ -1,10 +1,10 @@
-public  class TakeOut extends Booking{
+public  class TakeOut extends Orders{
 
     public int userID;
-    private Date date; 
+    private Datetime date; 
     public int TakeOutID;
 
-    public makeTakeOut(int userID, Date date ) {
+    public makeTakeOut(int userID, Datetime date ) {
     this.userID = userID;
     this.date = date;
     TakeOut TakeOut= new TakeOut(userID, date);
