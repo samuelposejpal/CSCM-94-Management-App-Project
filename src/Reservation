@@ -1,12 +1,6 @@
 public class Reservation extends Booking {
 
-public boolean makeReservation(int userId, LocalDate reservationTime, int numberOfCustomers, ){
-		Table table = null;
-
-		Reservation Reservation = new Reservation(customerId, table.tableId, reservationTime, numberOfCustomers);
-		
-		
-
+	
 class Reservation{
 	int reservationId;
 	int customerId;
@@ -15,14 +9,16 @@ class Reservation{
 	LocalDate reservationTime;
 	int numberOfCustomers
 	
-	public Reservation(int customerId, int tableId, LocalDate reservationTime, int numberOfCustomers){
+public makeReservation(int userId, LocalDate reservationTime, int numberOfCustomers, ){
+		Table table = null;
+		
 		this.reservationId = reservationId;
 		this.tableId = tableId;
 		this.customerId = customerId;
 		this.reservationTime = reservationTime;
 		this.numberOfCustomers = numberOfCustomers;
-	}
-	
+
+		Reservation Reservation = new Reservation(customerId, table.tableId, reservationTime, numberOfCustomers);
 
 	
 }
