@@ -20,6 +20,13 @@ public class Reservation extends Booking {
 
 	
 }
+//methods
+    public int get_ReservationID() { return ReservationID; }
+
+    public String get_date() { return date; }
+
+    public String get_userID() { return  userID;}
+    //more methods to add
 
 	}
 
