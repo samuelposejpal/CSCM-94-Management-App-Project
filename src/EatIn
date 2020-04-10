@@ -1,0 +1,29 @@
+public  class EatIn extends Orders{
+
+    public int userID;
+    private Datetime date; 
+    public int EatInID;
+    public orderNo;
+    
+    public makeEatIn(int employeeID, int customerID, datetime date, int reservationID, int OrderNo ) {
+    this.employeeID = employeeID;
+    this.int customerID = int customerID;
+    this.date = date;
+    this.OrderNo=OrderNo
+    this.reservationID=reservationID;
+    TakeOut TakeOut= new TakeOut(userID, date);
+
+    
+}
+
+    // The methods:
+
+    public int get_EatInID() { return TakeOutID; }
+
+    public String get_date() { return date; }
+
+    public String get_employeeID() { return  employeeID;}
+    public String get_customerID() { return  customerID;}
+   //customers orders
+    //chef prepares
+    //waiter hands out
