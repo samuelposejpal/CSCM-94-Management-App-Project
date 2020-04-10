@@ -4,9 +4,10 @@ public  class TakeOut extends Orders{
     private Datetime date; 
     public int TakeOutID;
 
-    public makeTakeOut(int userID, Datetime date ) {
+    public makeTakeOut(int userID, Datetime date, OrderNo ) {
     this.userID = userID;
     this.date = date;
+    this.OrderNo=OrderNo
     TakeOut TakeOut= new TakeOut(userID, date);
 
     
