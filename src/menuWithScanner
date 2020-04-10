@@ -4,7 +4,7 @@ Scanner in = new Scanner ( System.in );
     switch ( in.nextInt() ) {
       case 1:
         System.out.println ( "You picked option 1" );
-        MenuItems=1;
+        []MenuItems=1;
         break;
       case 2:
         System.out.println ( "You picked option 2" );
