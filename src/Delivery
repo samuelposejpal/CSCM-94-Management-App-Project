@@ -4,11 +4,12 @@ public class Delivery extends Orders {
     public Datetime date;
     public int DeliveryID;
     public String array orderList;
+    public int OrderNo;
 
-    public makeDelivery(int userID, Date date ) {
+    public makeDelivery(int userID, Date date, int OrderNo ) {
         this.userID = userID;
         this.date = date;
-    
+        this.OrderNo=OrderNo;
         Delivery Delivery = new Delivery(userID,date);
 }
 
