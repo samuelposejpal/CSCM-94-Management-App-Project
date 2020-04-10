@@ -1,16 +1,18 @@
 public class Delivery extends Orders {
 
-    public int userID;
+    public int customerID;
     public Datetime date;
     public int DeliveryID;
     public String array orderList;
-    public int OrderNo;
+    public [] MenuItems;
+    public int employeeID;
 
-    public makeDelivery(int userID, Date date, int OrderNo ) {
+    public makeDelivery(int customerID, int employeeID, Date date, [] MenuItems ) {
         this.userID = userID;
         this.date = date;
-        this.OrderNo=OrderNo;
-        Delivery Delivery = new Delivery(userID,date);
+        this.MenuItems=MenuItems;
+        this.employeeId=employeeID
+        Delivery Delivery = new Delivery(int customerID, int employeeID, Date date, [] MenuItems);
 }
 
     // The methods:
@@ -20,4 +22,6 @@ public class Delivery extends Orders {
     public String get_date() { return date; }
 
     public String get_userID() { return  userID;}
+    
+    public Array get_MenuItems(){ return MenuItems;}
 }
