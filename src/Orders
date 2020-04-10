@@ -1,0 +1,30 @@
+public  class Orders{
+
+    public int userID;
+    private Datetime date; 
+    public int OrderID;
+    public array MenuItems
+    /[] menu items
+    public makeOrder(int customerID, datetime date, int orderID, array MenuItems ) {
+
+    this.customerID = int customerID;
+    this.date = date;
+    this.OrderID=OrderID;
+    this.MenuItems=MenuItems;
+    Order Order= new Order(int customerID, datetime date, int orderID, array MenuItems);
+
+    
+}
+
+    // The methods:
+
+    public int get_orderID() { return orderID; }
+
+    public String get_date() { return date; }
+
+    public String get_customerID() { return  customerID;}
+    
+    public Array get_MenuItems(){ return MenuItems;}
+   //customers orders
+    //chef prepares
+    //waiter hands out
