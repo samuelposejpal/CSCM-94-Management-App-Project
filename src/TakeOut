@@ -1,11 +1,11 @@
 public  class TakeOut extends Orders{
-
+/have to finish this
     public int userID;
     private Datetime date; 
     public int TakeOutID;
-    public orderNo;
+    public []MenuItems;
     
-    public makeTakeOut(int userID, Datetime date, int OrderNo ) {
+    public makeTakeOut(int customerID, int employeeID Datetime date, []MenuItems ) {
     this.userID = userID;
     this.date = date;
     this.OrderNo=OrderNo
